@@ -1,0 +1,1519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VIA Product Content Engine™ — Retail-Ready Assets for Furniture Manufacturers</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #FAF7F2;
+    --warm-white: #FFFCF7;
+    --sand: #E8E0D4;
+    --clay: #C4A882;
+    --terracotta: #C17B56;
+    --deep-brown: #3D2E1E;
+    --charcoal: #2A2520;
+    --soft-black: #1A1612;
+    --sage: #8B9A7E;
+    --muted-gold: #B8965A;
+    --blush: #E8CFC0;
+    --radius: 12px;
+    --radius-lg: 20px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Outfit', sans-serif;
+    background: var(--cream);
+    color: var(--charcoal);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* ─── NAV ─── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    padding: 20px 48px;
+    display: flex; justify-content: space-between; align-items: center;
+    background: rgba(250,247,242,0.85);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(196,168,130,0.15);
+    transition: all 0.4s ease;
+  }
+  nav.scrolled { padding: 14px 48px; box-shadow: 0 4px 30px rgba(0,0,0,0.04); }
+
+  .logo {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.6rem;
+    color: var(--deep-brown);
+    text-decoration: none;
+    letter-spacing: -0.5px;
+  }
+  .logo span { color: var(--terracotta); }
+
+  .nav-links { display: flex; gap: 32px; align-items: center; }
+  .nav-links a {
+    text-decoration: none; color: var(--charcoal);
+    font-size: 0.9rem; font-weight: 500;
+    opacity: 0.7; transition: opacity 0.3s;
+  }
+  .nav-links a:hover { opacity: 1; }
+
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 14px 32px;
+    background: var(--terracotta);
+    color: white;
+    border: none; border-radius: 50px;
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.95rem; font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    letter-spacing: 0.2px;
+  }
+  .btn:hover { background: #a8674a; transform: translateY(-2px); box-shadow: 0 8px 30px rgba(193,123,86,0.3); }
+
+  .btn-outline {
+    background: transparent;
+    color: var(--deep-brown);
+    border: 1.5px solid var(--clay);
+  }
+  .btn-outline:hover {
+    background: var(--deep-brown);
+    color: white;
+    border-color: var(--deep-brown);
+    box-shadow: 0 8px 30px rgba(61,46,30,0.2);
+  }
+
+  .btn-sm { padding: 10px 24px; font-size: 0.85rem; }
+
+  .btn-light {
+    background: white;
+    color: var(--deep-brown);
+    border: 1.5px solid rgba(255,255,255,0.2);
+  }
+  .btn-light:hover {
+    background: rgba(255,255,255,0.9);
+    box-shadow: 0 8px 30px rgba(255,255,255,0.15);
+  }
+
+  /* ─── HERO ─── */
+  .hero {
+    min-height: 100vh;
+    display: flex; align-items: center;
+    padding: 120px 48px 80px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; top: -200px; right: -200px;
+    width: 800px; height: 800px;
+    background: radial-gradient(circle, rgba(193,123,86,0.08) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+  .hero::after {
+    content: '';
+    position: absolute; bottom: -100px; left: -100px;
+    width: 500px; height: 500px;
+    background: radial-gradient(circle, rgba(139,154,126,0.06) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+
+  .hero-content {
+    max-width: 1280px; margin: 0 auto; width: 100%;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 80px;
+    align-items: center;
+    position: relative; z-index: 1;
+  }
+
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 8px 20px;
+    background: rgba(193,123,86,0.1);
+    border-radius: 50px;
+    font-size: 0.8rem; font-weight: 600;
+    color: var(--terracotta);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 24px;
+    animation: fadeSlideUp 0.8s ease forwards;
+  }
+  .hero-badge::before {
+    content: '';
+    width: 6px; height: 6px;
+    background: var(--terracotta);
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+  }
+
+  .hero h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(2.8rem, 5vw, 4rem);
+    line-height: 1.1;
+    color: var(--soft-black);
+    margin-bottom: 24px;
+    animation: fadeSlideUp 0.8s 0.15s ease both;
+  }
+  .hero h1 em {
+    font-style: italic;
+    color: var(--terracotta);
+  }
+
+  .hero-text {
+    font-size: 1.1rem;
+    line-height: 1.75;
+    color: var(--charcoal);
+    opacity: 0.8;
+    max-width: 520px;
+    margin-bottom: 40px;
+    animation: fadeSlideUp 0.8s 0.3s ease both;
+  }
+
+  .hero-ctas {
+    display: flex; gap: 16px; flex-wrap: wrap;
+    animation: fadeSlideUp 0.8s 0.45s ease both;
+  }
+
+  .hero-visual {
+    position: relative;
+    animation: fadeSlideUp 0.8s 0.5s ease both;
+  }
+
+  .hero-card {
+    background: white;
+    border-radius: var(--radius-lg);
+    padding: 32px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.06), 0 1px 3px rgba(0,0,0,0.04);
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-card::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--terracotta), var(--muted-gold), var(--sage));
+  }
+
+  .hero-card-header {
+    display: flex; justify-content: space-between; align-items: center;
+    margin-bottom: 24px;
+  }
+  .hero-card-label {
+    font-size: 0.75rem; text-transform: uppercase;
+    letter-spacing: 1.5px; font-weight: 600;
+    color: var(--clay);
+  }
+  .hero-card-status {
+    display: flex; align-items: center; gap: 6px;
+    font-size: 0.8rem; color: var(--sage); font-weight: 500;
+  }
+  .hero-card-status::before {
+    content: ''; width: 8px; height: 8px;
+    background: var(--sage); border-radius: 50%;
+    animation: pulse 2s infinite;
+  }
+
+  .hero-preview-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 12px;
+    margin-bottom: 24px;
+  }
+  .preview-thumb {
+    aspect-ratio: 4/3;
+    border-radius: var(--radius);
+    position: relative;
+    overflow: hidden;
+  }
+  .preview-thumb:nth-child(1) { background: linear-gradient(135deg, var(--blush), var(--sand)); }
+  .preview-thumb:nth-child(2) { background: linear-gradient(135deg, var(--sand), var(--sage)); }
+  .preview-thumb:nth-child(3) { background: linear-gradient(135deg, var(--sage), var(--clay)); }
+  .preview-thumb:nth-child(4) { background: linear-gradient(135deg, var(--clay), var(--terracotta)); }
+  .preview-thumb-label {
+    position: absolute; bottom: 8px; left: 8px;
+    font-size: 0.65rem; text-transform: uppercase;
+    letter-spacing: 1px; font-weight: 600;
+    background: rgba(255,255,255,0.9);
+    padding: 4px 10px; border-radius: 20px;
+    color: var(--charcoal);
+  }
+
+  .hero-card-stats {
+    display: flex; gap: 24px;
+    padding-top: 20px;
+    border-top: 1px solid var(--sand);
+  }
+  .stat-item { flex: 1; }
+  .stat-value {
+    font-size: 1.4rem; font-weight: 700;
+    color: var(--deep-brown);
+  }
+  .stat-label {
+    font-size: 0.7rem; text-transform: uppercase;
+    letter-spacing: 1px; color: var(--clay);
+    font-weight: 500; margin-top: 2px;
+  }
+
+  .floating-tag {
+    position: absolute;
+    background: white;
+    padding: 10px 18px;
+    border-radius: 50px;
+    font-size: 0.8rem; font-weight: 500;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+    animation: float 6s ease-in-out infinite;
+  }
+  .floating-tag.tag-1 { top: -20px; right: -10px; color: var(--terracotta); animation-delay: 0s; }
+  .floating-tag.tag-2 { bottom: 40px; left: -30px; color: var(--sage); animation-delay: 2s; }
+
+  /* ─── SECTION SHARED ─── */
+  section { padding: 100px 48px; }
+
+  .section-label {
+    font-size: 0.75rem; text-transform: uppercase;
+    letter-spacing: 2px; font-weight: 600;
+    color: var(--terracotta);
+    margin-bottom: 16px;
+  }
+
+  .section-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(2rem, 3.5vw, 2.8rem);
+    color: var(--soft-black);
+    line-height: 1.15;
+    margin-bottom: 20px;
+  }
+
+  .section-subtitle {
+    font-size: 1.1rem;
+    color: var(--charcoal);
+    opacity: 0.7;
+    max-width: 600px;
+    line-height: 1.7;
+  }
+
+  .section-header {
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto 64px;
+  }
+  .section-header .section-subtitle { margin: 0 auto; }
+
+  /* ─── CREDIBILITY STRIP ─── */
+  .credibility {
+    background: var(--warm-white);
+    border-top: 1px solid rgba(196,168,130,0.15);
+    border-bottom: 1px solid rgba(196,168,130,0.15);
+    padding: 60px 48px;
+    text-align: center;
+  }
+
+  .credibility-label {
+    font-size: 0.7rem; text-transform: uppercase;
+    letter-spacing: 2px; font-weight: 600;
+    color: var(--clay); margin-bottom: 32px;
+  }
+
+  .credibility-stats {
+    display: flex; justify-content: center; gap: 64px; flex-wrap: wrap;
+    max-width: 900px; margin: 0 auto;
+  }
+
+  .cred-stat { text-align: center; }
+  .cred-stat-value {
+    font-family: 'DM Serif Display', serif;
+    font-size: 2.8rem;
+    color: var(--deep-brown);
+    line-height: 1;
+  }
+  .cred-stat-desc {
+    font-size: 0.85rem;
+    color: var(--charcoal);
+    opacity: 0.6;
+    margin-top: 8px;
+    font-weight: 400;
+  }
+
+  /* ─── PROBLEM ─── */
+  .problem-section {
+    background: var(--soft-black);
+    color: white;
+    position: relative;
+    overflow: hidden;
+  }
+  .problem-section::before {
+    content: '';
+    position: absolute; top: 0; right: 0;
+    width: 50%; height: 100%;
+    background: radial-gradient(circle at top right, rgba(193,123,86,0.08), transparent 60%);
+  }
+
+  .problem-grid {
+    max-width: 1200px; margin: 0 auto;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 80px;
+    align-items: start;
+    position: relative; z-index: 1;
+  }
+
+  .problem-section .section-label { color: var(--muted-gold); }
+  .problem-section .section-title { color: white; }
+  .problem-section .section-subtitle { color: rgba(255,255,255,0.6); }
+
+  .problem-list {
+    display: flex; flex-direction: column; gap: 20px;
+    margin-top: 32px;
+  }
+
+  .problem-item {
+    display: flex; gap: 16px; align-items: flex-start;
+    padding: 20px;
+    background: rgba(255,255,255,0.03);
+    border-radius: var(--radius);
+    border-left: 3px solid rgba(193,123,86,0.4);
+  }
+
+  .problem-item p {
+    font-size: 0.95rem;
+    color: rgba(255,255,255,0.7);
+    line-height: 1.6;
+  }
+  .problem-item strong { color: white; }
+
+  .solution-callout {
+    background: rgba(193,123,86,0.1);
+    border: 1px solid rgba(193,123,86,0.2);
+    border-radius: var(--radius-lg);
+    padding: 32px;
+    margin-top: 40px;
+  }
+  .solution-callout h3 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.4rem;
+    color: white;
+    margin-bottom: 12px;
+  }
+  .solution-callout p {
+    font-size: 0.95rem;
+    color: rgba(255,255,255,0.6);
+    line-height: 1.7;
+  }
+
+  /* ─── WHY VIA ─── */
+  .why-section {
+    background: var(--cream);
+  }
+
+  .why-grid {
+    max-width: 1200px; margin: 0 auto;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 80px;
+    align-items: center;
+  }
+
+  .why-points { display: flex; flex-direction: column; gap: 24px; }
+
+  .why-point {
+    display: flex; gap: 20px;
+    padding: 24px;
+    background: white;
+    border-radius: var(--radius);
+    border: 1px solid rgba(196,168,130,0.1);
+    transition: all 0.3s;
+  }
+  .why-point:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.04);
+  }
+
+  .why-icon {
+    width: 48px; height: 48px; flex-shrink: 0;
+    background: rgba(193,123,86,0.1);
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.2rem;
+  }
+
+  .why-point h4 {
+    font-size: 1.05rem; font-weight: 600;
+    margin-bottom: 6px;
+    color: var(--deep-brown);
+  }
+  .why-point p {
+    font-size: 0.9rem;
+    color: var(--charcoal);
+    opacity: 0.65;
+    line-height: 1.6;
+  }
+
+  .why-quote {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.6rem;
+    color: var(--terracotta);
+    line-height: 1.35;
+    font-style: italic;
+    margin-top: 24px;
+    padding-left: 24px;
+    border-left: 3px solid var(--terracotta);
+  }
+
+  /* ─── DELIVERABLES ─── */
+  .deliverables {
+    background: var(--warm-white);
+    border-top: 1px solid rgba(196,168,130,0.1);
+  }
+
+  .deliverables-grid {
+    max-width: 1100px; margin: 0 auto;
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+  }
+
+  .deliverable-card {
+    background: white;
+    border-radius: var(--radius-lg);
+    padding: 32px 28px;
+    border: 1px solid rgba(196,168,130,0.1);
+    text-align: center;
+    transition: all 0.4s cubic-bezier(0.4,0,0.2,1);
+  }
+  .deliverable-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.05);
+  }
+
+  .deliverable-icon {
+    width: 56px; height: 56px;
+    background: rgba(193,123,86,0.08);
+    border-radius: 14px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.5rem;
+    margin: 0 auto 16px;
+  }
+
+  .deliverable-card h4 {
+    font-size: 1rem; font-weight: 600;
+    color: var(--deep-brown);
+    margin-bottom: 8px;
+  }
+  .deliverable-card p {
+    font-size: 0.85rem;
+    color: var(--charcoal);
+    opacity: 0.6;
+    line-height: 1.6;
+  }
+
+  /* ─── HOW IT WORKS ─── */
+  .how-section {
+    background: var(--cream);
+  }
+
+  .how-steps {
+    max-width: 1100px; margin: 0 auto;
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px;
+  }
+
+  .how-step {
+    background: white;
+    border-radius: var(--radius-lg);
+    padding: 40px 32px;
+    position: relative;
+    transition: all 0.4s cubic-bezier(0.4,0,0.2,1);
+    border: 1px solid rgba(196,168,130,0.12);
+  }
+  .how-step:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.06);
+  }
+
+  .step-number {
+    font-family: 'DM Serif Display', serif;
+    font-size: 3rem;
+    color: var(--sand);
+    line-height: 1;
+    margin-bottom: 20px;
+  }
+  .how-step h4 {
+    font-size: 1.15rem; font-weight: 600;
+    color: var(--deep-brown);
+    margin-bottom: 12px;
+  }
+  .how-step p {
+    font-size: 0.9rem;
+    color: var(--charcoal);
+    opacity: 0.65;
+    line-height: 1.7;
+  }
+
+  /* ─── BEFORE / AFTER SHOWCASE ─── */
+  .showcase {
+    background: var(--warm-white);
+    border-top: 1px solid rgba(196,168,130,0.1);
+  }
+
+  .showcase-container {
+    max-width: 1100px; margin: 0 auto;
+  }
+
+  .showcase-comparison {
+    display: grid; grid-template-columns: 1fr auto 1fr; gap: 32px;
+    align-items: center;
+  }
+
+  .showcase-panel {
+    background: white;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.04);
+    border: 1px solid rgba(196,168,130,0.1);
+  }
+
+  .showcase-panel-header {
+    padding: 16px 24px;
+    display: flex; justify-content: space-between; align-items: center;
+    border-bottom: 1px solid var(--sand);
+  }
+  .showcase-panel-tag {
+    font-size: 0.7rem; text-transform: uppercase;
+    letter-spacing: 1.5px; font-weight: 600;
+  }
+  .tag-traditional { color: var(--clay); }
+  .tag-ai { color: var(--terracotta); }
+
+  .showcase-panel-body { padding: 32px 24px; }
+
+  .showcase-visual {
+    width: 100%; aspect-ratio: 16/10;
+    border-radius: var(--radius);
+    margin-bottom: 20px;
+  }
+  .visual-traditional {
+    background: linear-gradient(135deg, var(--sand) 0%, #d4cbbf 100%);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .visual-traditional::after { content: '🎬'; font-size: 2.5rem; opacity: 0.4; }
+  .visual-ai {
+    background: linear-gradient(135deg, var(--blush) 0%, var(--terracotta) 100%);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .visual-ai::after { content: '✨'; font-size: 2.5rem; opacity: 0.6; }
+
+  .showcase-detail { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 12px; }
+  .showcase-detail-icon {
+    width: 20px; height: 20px; flex-shrink: 0;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.65rem;
+    margin-top: 2px;
+  }
+  .icon-old { background: var(--sand); color: var(--charcoal); }
+  .icon-new { background: rgba(193,123,86,0.15); color: var(--terracotta); }
+
+  .showcase-detail p {
+    font-size: 0.85rem;
+    color: var(--charcoal);
+    opacity: 0.7;
+    line-height: 1.5;
+  }
+
+  .showcase-arrow {
+    font-size: 2rem;
+    color: var(--clay);
+    opacity: 0.4;
+  }
+
+  .showcase-savings {
+    text-align: center;
+    margin-top: 40px;
+    padding: 28px;
+    background: linear-gradient(135deg, rgba(193,123,86,0.06), rgba(139,154,126,0.06));
+    border-radius: var(--radius-lg);
+  }
+  .savings-value {
+    font-family: 'DM Serif Display', serif;
+    font-size: 2.2rem;
+    color: var(--terracotta);
+  }
+  .savings-label {
+    font-size: 0.85rem;
+    color: var(--charcoal);
+    opacity: 0.6;
+    margin-top: 4px;
+  }
+
+  /* ─── SOCIAL PROOF / LOGOS ─── */
+  .social-proof {
+    background: var(--cream);
+  }
+
+  .logos-grid {
+    max-width: 1000px; margin: 0 auto 60px;
+    display: flex; justify-content: center; gap: 48px; flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .logo-item {
+    width: 120px; height: 50px;
+    background: var(--sand);
+    border-radius: 8px;
+    opacity: 0.4;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.7rem; font-weight: 600;
+    color: var(--charcoal);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: opacity 0.3s;
+  }
+  .logo-item:hover { opacity: 0.7; }
+
+  .testimonials {
+    max-width: 1000px; margin: 0 auto;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 24px;
+  }
+
+  .testimonial {
+    background: white;
+    border-radius: var(--radius-lg);
+    padding: 32px;
+    border: 1px solid rgba(196,168,130,0.1);
+  }
+
+  .testimonial-quote {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.1rem;
+    color: var(--deep-brown);
+    line-height: 1.5;
+    margin-bottom: 20px;
+    font-style: italic;
+  }
+
+  .testimonial-author { display: flex; align-items: center; gap: 12px; }
+  .author-avatar {
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--blush), var(--clay));
+  }
+  .author-name { font-size: 0.85rem; font-weight: 600; color: var(--charcoal); }
+  .author-role { font-size: 0.75rem; color: var(--clay); }
+
+  /* ─── PRICING ─── */
+  .pricing {
+    background: var(--warm-white);
+    border-top: 1px solid rgba(196,168,130,0.1);
+  }
+
+  .pricing-grid {
+    max-width: 1100px; margin: 0 auto;
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+  }
+
+  .price-card {
+    background: white;
+    border-radius: var(--radius-lg);
+    padding: 40px 32px;
+    border: 1.5px solid rgba(196,168,130,0.12);
+    transition: all 0.4s cubic-bezier(0.4,0,0.2,1);
+    position: relative;
+    display: flex; flex-direction: column;
+  }
+  .price-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.06);
+  }
+  .price-card.featured {
+    border-color: var(--terracotta);
+    background: var(--soft-black);
+    color: white;
+  }
+  .price-card.featured .price-card-label { color: var(--muted-gold); }
+  .price-card.featured .price-name { color: white; }
+  .price-card.featured .price-desc { color: rgba(255,255,255,0.6); }
+  .price-card.featured .price-value { color: white; }
+  .price-card.featured .price-per { color: rgba(255,255,255,0.4); }
+  .price-card.featured .price-feature { color: rgba(255,255,255,0.7); }
+  .price-card.featured .price-feature::before { background: var(--muted-gold); }
+  .price-card.featured .btn { background: var(--terracotta); }
+  .price-card.featured .btn:hover { background: #d4885f; }
+  .price-card.featured .price-divider { border-color: rgba(255,255,255,0.1); }
+  .price-card.featured .includes-label { color: rgba(255,255,255,0.4); }
+
+  .featured-badge {
+    position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
+    background: var(--terracotta);
+    color: white;
+    font-size: 0.7rem; font-weight: 600;
+    text-transform: uppercase; letter-spacing: 1.5px;
+    padding: 6px 20px;
+    border-radius: 50px;
+    white-space: nowrap;
+  }
+
+  .price-card-label {
+    font-size: 0.7rem; text-transform: uppercase;
+    letter-spacing: 1.5px; font-weight: 600;
+    color: var(--clay);
+    margin-bottom: 8px;
+  }
+  .price-name {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.5rem;
+    color: var(--deep-brown);
+    margin-bottom: 8px;
+  }
+  .price-desc {
+    font-size: 0.85rem;
+    color: var(--charcoal);
+    opacity: 0.6;
+    margin-bottom: 24px;
+    line-height: 1.6;
+    min-height: 54px;
+  }
+
+  .price-value {
+    font-family: 'DM Serif Display', serif;
+    font-size: 2.8rem;
+    color: var(--deep-brown);
+    line-height: 1;
+  }
+  .price-per {
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.85rem;
+    color: var(--clay);
+    margin-bottom: 24px;
+    display: block;
+  }
+
+  .price-divider {
+    border: none;
+    border-top: 1px solid var(--sand);
+    margin: 0 0 20px;
+  }
+
+  .includes-label {
+    font-size: 0.7rem; text-transform: uppercase;
+    letter-spacing: 1.5px; font-weight: 600;
+    color: var(--clay);
+    margin-bottom: 14px;
+  }
+
+  .price-features {
+    list-style: none;
+    display: flex; flex-direction: column; gap: 12px;
+    margin-bottom: 32px;
+    flex: 1;
+  }
+  .price-feature {
+    font-size: 0.88rem;
+    color: var(--charcoal);
+    opacity: 0.75;
+    display: flex; align-items: flex-start; gap: 12px;
+    line-height: 1.45;
+  }
+  .price-feature::before {
+    content: '';
+    width: 6px; height: 6px;
+    background: var(--terracotta);
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 7px;
+  }
+
+  .price-card .btn { width: 100%; justify-content: center; }
+
+  .pricing-note {
+    text-align: center;
+    max-width: 640px;
+    margin: 48px auto 0;
+    padding: 28px;
+    background: linear-gradient(135deg, rgba(193,123,86,0.05), rgba(139,154,126,0.05));
+    border-radius: var(--radius-lg);
+  }
+  .pricing-note-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.15rem;
+    color: var(--deep-brown);
+    margin-bottom: 8px;
+  }
+  .pricing-note p {
+    font-size: 0.9rem;
+    color: var(--charcoal);
+    opacity: 0.6;
+    line-height: 1.6;
+  }
+
+  /* ─── CTA / FORM ─── */
+  .cta-section {
+    background: var(--soft-black);
+    position: relative;
+    overflow: hidden;
+    padding: 100px 48px;
+  }
+  .cta-section::before {
+    content: '';
+    position: absolute; top: -300px; left: 50%; transform: translateX(-50%);
+    width: 800px; height: 800px;
+    background: radial-gradient(circle, rgba(193,123,86,0.1), transparent 60%);
+    border-radius: 50%;
+  }
+
+  .cta-container {
+    max-width: 800px; margin: 0 auto;
+    text-align: center;
+    position: relative; z-index: 1;
+  }
+
+  .cta-section .section-label { color: var(--muted-gold); }
+  .cta-section .section-title { color: white; margin-bottom: 16px; }
+  .cta-section .section-subtitle {
+    color: rgba(255,255,255,0.55);
+    margin: 0 auto 48px;
+  }
+
+  .cta-form {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: var(--radius-lg);
+    padding: 40px;
+    backdrop-filter: blur(10px);
+    max-width: 560px;
+    margin: 0 auto;
+  }
+
+  .form-row {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
+    margin-bottom: 16px;
+  }
+
+  .form-group { margin-bottom: 16px; }
+  .form-group:last-of-type { margin-bottom: 24px; }
+
+  .form-input {
+    width: 100%;
+    padding: 14px 18px;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: var(--radius);
+    color: white;
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.9rem;
+    transition: all 0.3s;
+    outline: none;
+  }
+  .form-input::placeholder { color: rgba(255,255,255,0.3); }
+  .form-input:focus {
+    border-color: var(--terracotta);
+    background: rgba(255,255,255,0.08);
+  }
+
+  .form-select {
+    width: 100%;
+    padding: 14px 18px;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: var(--radius);
+    color: rgba(255,255,255,0.6);
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.9rem;
+    appearance: none;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.3s;
+  }
+  .form-select:focus {
+    border-color: var(--terracotta);
+    background: rgba(255,255,255,0.08);
+  }
+  .form-select option { background: var(--soft-black); color: white; }
+
+  .cta-form .btn { width: 100%; justify-content: center; font-size: 1rem; padding: 16px; }
+
+  .form-note {
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.3);
+    margin-top: 16px;
+  }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: var(--soft-black);
+    border-top: 1px solid rgba(255,255,255,0.06);
+    padding: 48px;
+    text-align: center;
+  }
+
+  .footer-logo {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.3rem; color: white;
+    margin-bottom: 12px;
+  }
+  .footer-logo span { color: var(--terracotta); }
+
+  .footer-text {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.3);
+    margin-bottom: 24px;
+  }
+
+  .footer-links { display: flex; gap: 24px; justify-content: center; }
+  .footer-links a {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.4);
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  .footer-links a:hover { color: white; }
+
+  /* ─── ANIMATIONS ─── */
+  @keyframes fadeSlideUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-12px); }
+  }
+
+  .reveal {
+    opacity: 0; transform: translateY(40px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .reveal.visible {
+    opacity: 1; transform: translateY(0);
+  }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 960px) {
+    nav { padding: 16px 24px; }
+    .nav-links a:not(.btn) { display: none; }
+    section { padding: 72px 24px; }
+    .hero { padding: 100px 24px 60px; }
+    .hero-content { grid-template-columns: 1fr; gap: 48px; }
+    .hero-visual { max-width: 480px; }
+    .floating-tag { display: none; }
+    .problem-grid { grid-template-columns: 1fr; gap: 48px; }
+    .why-grid { grid-template-columns: 1fr; gap: 48px; }
+    .deliverables-grid { grid-template-columns: 1fr; max-width: 380px; margin: 0 auto; }
+    .how-steps { grid-template-columns: 1fr; max-width: 440px; }
+    .showcase-comparison { grid-template-columns: 1fr; }
+    .showcase-arrow { transform: rotate(90deg); margin: 0 auto; }
+    .testimonials { grid-template-columns: 1fr; }
+    .pricing-grid { grid-template-columns: 1fr; max-width: 440px; margin: 0 auto; }
+    .form-row { grid-template-columns: 1fr; }
+    .credibility-stats { gap: 32px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ─── NAV ─── -->
+<nav id="nav">
+  <a href="#" class="logo">VIA<span>.AI</span></a>
+  <div class="nav-links">
+    <a href="#how">How It Works</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#proof">Results</a>
+    <a href="#contact" class="btn btn-sm">Book a Demo</a>
+  </div>
+</nav>
+
+<!-- ─── HERO ─── -->
+<section class="hero">
+  <div class="hero-content">
+    <div>
+      <div class="hero-badge">Now Live — Q1 2026</div>
+      <h1>Retail-Ready Assets for Furniture <em>Manufacturers</em></h1>
+      <p class="hero-text">Retailers can't promote what they don't have assets for. VIA's Product Content Engine™ creates AI-enhanced, human-curated product libraries — video, photography, and more — so your retailers have what they need to sell.</p>
+      <div class="hero-ctas">
+        <a href="#contact" class="btn">Book Your Demo →</a>
+        <a href="#pricing" class="btn btn-outline">See Pricing</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-card">
+        <div class="hero-card-header">
+          <span class="hero-card-label">Product Content Engine™</span>
+          <span class="hero-card-status">Live</span>
+        </div>
+        <div class="hero-preview-grid">
+          <div class="preview-thumb">
+            <span class="preview-thumb-label">Lifestyle</span>
+          </div>
+          <div class="preview-thumb">
+            <span class="preview-thumb-label">Product Video</span>
+          </div>
+          <div class="preview-thumb">
+            <span class="preview-thumb-label">Clean Cutout</span>
+          </div>
+          <div class="preview-thumb">
+            <span class="preview-thumb-label">Social Ready</span>
+          </div>
+        </div>
+        <div class="hero-card-stats">
+          <div class="stat-item">
+            <div class="stat-value">10x</div>
+            <div class="stat-label">Lower Cost</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-value">5-Day</div>
+            <div class="stat-label">Turnaround</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-value">100+</div>
+            <div class="stat-label">Brands Served</div>
+          </div>
+        </div>
+      </div>
+      <div class="floating-tag tag-1">✨ AI Enhanced</div>
+      <div class="floating-tag tag-2">✓ Human Curated</div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CREDIBILITY ─── -->
+<div class="credibility reveal">
+  <div class="credibility-label">The production company behind the biggest names in furniture</div>
+  <div class="credibility-stats">
+    <div class="cred-stat">
+      <div class="cred-stat-value">20+</div>
+      <div class="cred-stat-desc">Years in Furniture Production</div>
+    </div>
+    <div class="cred-stat">
+      <div class="cred-stat-value">20+</div>
+      <div class="cred-stat-desc">Of the Top 100 Retailers</div>
+    </div>
+    <div class="cred-stat">
+      <div class="cred-stat-value">100+</div>
+      <div class="cred-stat-desc">Furniture Brands Served</div>
+    </div>
+    <div class="cred-stat">
+      <div class="cred-stat-value">#1</div>
+      <div class="cred-stat-desc">Global Manufacturer Partner</div>
+    </div>
+  </div>
+</div>
+
+<!-- ─── THE PROBLEM ─── -->
+<section class="problem-section" id="problem">
+  <div class="problem-grid">
+    <div class="reveal">
+      <div class="section-label">The Problem</div>
+      <h2 class="section-title">Retailers won't promote what they don't have assets for.</h2>
+      <p class="section-subtitle">Furniture manufacturers struggle to provide retailers with the product assets they actually need. The result? Lower retailer participation and less effective promotion to the end consumer — two killers to your top line.</p>
+
+      <div class="solution-callout">
+        <h3>The Content Engine™ Solution</h3>
+        <p>VIA creates elevated, cost-effective product image and video libraries designed specifically for retail performance — using AI, automation, traditional artistry, proven process, and deep industry expertise.</p>
+      </div>
+    </div>
+
+    <div class="reveal">
+      <div class="problem-list">
+        <div class="problem-item">
+          <p><strong>High cost of traditional production</strong> — big shoots drain budgets and still don't cover the full catalog.</p>
+        </div>
+        <div class="problem-item">
+          <p><strong>Slow speed to market</strong> — traditional timelines mean products sit without proper promotion for weeks.</p>
+        </div>
+        <div class="problem-item">
+          <p><strong>Cumbersome asset distribution</strong> — retailers can't use what they can't easily access or reformat.</p>
+        </div>
+        <div class="problem-item">
+          <p><strong>Brand inconsistency</strong> — when retailers create their own assets, your brand suffers.</p>
+        </div>
+        <div class="problem-item">
+          <p><strong>Underserved retailers</strong> — most manufacturers either overspend on big shoots or deliver basic cutouts that don't sell.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── WHY VIA ─── -->
+<section class="why-section" id="why">
+  <div class="why-grid">
+    <div class="reveal">
+      <div class="section-label">Why VIA</div>
+      <h2 class="section-title">VIA is not a creative studio. VIA is a retail performance partner.</h2>
+      <p class="section-subtitle">Other production services are all about their product — art or tech is the hero. At VIA, you're the hero. We're the guide who knows what retailers actually need.</p>
+      <p class="why-quote">"We didn't learn furniture to sell AI. We built AI because we know furniture better than anyone."</p>
+    </div>
+    <div class="why-points reveal">
+      <div class="why-point">
+        <div class="why-icon">🏬</div>
+        <div>
+          <h4>Retail-Savvy Experts</h4>
+          <p>We know what assets retailers actually deploy. We've served 20+ of the Top 100 — we've seen what works and what doesn't.</p>
+        </div>
+      </div>
+      <div class="why-point">
+        <div class="why-icon">👁</div>
+        <div>
+          <h4>Human in the Loop</h4>
+          <p>Our AI engine handles the heavy lifting. Our expert team curates every deliverable to ensure it drives sales — not just looks pretty.</p>
+        </div>
+      </div>
+      <div class="why-point">
+        <div class="why-icon">🔄</div>
+        <div>
+          <h4>Versioning Experts</h4>
+          <p>Assets that can be adapted for each retailer's brand — so your content works everywhere without costing retailers time and money to edit.</p>
+        </div>
+      </div>
+      <div class="why-point">
+        <div class="why-icon">💰</div>
+        <div>
+          <h4>Simple, Transparent Pricing</h4>
+          <p>No complicated estimates. No surprises. Per-SKU pricing that makes it easy to plan and scale.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── DELIVERABLES ─── -->
+<section class="deliverables" id="deliverables">
+  <div class="section-header reveal">
+    <div class="section-label">What You Get</div>
+    <h2 class="section-title">A complete, retail-ready asset library per SKU</h2>
+    <p class="section-subtitle">Not just "content" — an informed, retail-ready product asset library created to effectively promote products to the end consumer.</p>
+  </div>
+
+  <div class="deliverables-grid reveal">
+    <div class="deliverable-card">
+      <div class="deliverable-icon">📸</div>
+      <h4>Clean Cutout Images</h4>
+      <p>Professional product cutouts ready for web, print, and catalog use.</p>
+    </div>
+    <div class="deliverable-card">
+      <div class="deliverable-icon">🏡</div>
+      <h4>AI Lifestyle Renders</h4>
+      <p>Products placed in aspirational, relatable environments that drive purchase intent.</p>
+    </div>
+    <div class="deliverable-card">
+      <div class="deliverable-icon">🎬</div>
+      <h4>Short-Form Video</h4>
+      <p>15–30s product videos built for social, web, and retailer channels.</p>
+    </div>
+    <div class="deliverable-card">
+      <div class="deliverable-icon">📐</div>
+      <h4>Retail-Ready Formats</h4>
+      <p>16:9, 9:16, and 1:1 — every asset resized for every channel your retailers use.</p>
+    </div>
+    <div class="deliverable-card">
+      <div class="deliverable-icon">📱</div>
+      <h4>Social Media Assets</h4>
+      <p>Square and vertical formats optimized for Instagram, Facebook, TikTok, and Pinterest.</p>
+    </div>
+    <div class="deliverable-card">
+      <div class="deliverable-icon">📏</div>
+      <h4>Feature Overlays</h4>
+      <p>Optional dimension and feature callouts to give retailers plug-and-play promotional tools.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ─── HOW IT WORKS ─── -->
+<section class="how-section" id="how">
+  <div class="section-header reveal">
+    <div class="section-label">How It Works</div>
+    <h2 class="section-title">Send us product specs. We handle the rest.</h2>
+    <p class="section-subtitle">Three steps. Five-day turnaround. Retailers get plug-and-play content.</p>
+  </div>
+  <div class="how-steps reveal">
+    <div class="how-step">
+      <div class="step-number">01</div>
+      <h4>Send Product Specs</h4>
+      <p>Share your product information, images, and any brand guidelines. We'll take it from there — just like we've been doing for the world's biggest brands for 20 years.</p>
+    </div>
+    <div class="how-step">
+      <div class="step-number">02</div>
+      <h4>AI Creates, Humans Curate</h4>
+      <p>Our Content Engine generates scalable, AI-enhanced assets. Our production team reviews, refines, and ensures every deliverable meets our standard — and yours.</p>
+    </div>
+    <div class="how-step">
+      <div class="step-number">03</div>
+      <h4>Retailers Receive & Sell</h4>
+      <p>Your retailers get a complete, retail-ready asset library — properly formatted, on-brand, and designed to drive product sales across every channel.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ─── BEFORE / AFTER ─── -->
+<section class="showcase" id="showcase">
+  <div class="showcase-container">
+    <div class="section-header reveal">
+      <div class="section-label">The Difference</div>
+      <h2 class="section-title">Traditional production vs. the Content Engine</h2>
+      <p class="section-subtitle">Same quality your retailers demand — 10x lower cost and weeks faster.</p>
+    </div>
+
+    <div class="showcase-comparison reveal">
+      <div class="showcase-panel">
+        <div class="showcase-panel-header">
+          <span class="showcase-panel-tag tag-traditional">Traditional</span>
+          <span style="font-size:0.75rem; color:var(--clay);">The Old Way</span>
+        </div>
+        <div class="showcase-panel-body">
+          <div class="showcase-visual visual-traditional"></div>
+          <div class="showcase-detail">
+            <div class="showcase-detail-icon icon-old">⏱</div>
+            <p>4–8 weeks from concept to delivery</p>
+          </div>
+          <div class="showcase-detail">
+            <div class="showcase-detail-icon icon-old">💰</div>
+            <p>$15K–$50K+ per shoot day</p>
+          </div>
+          <div class="showcase-detail">
+            <div class="showcase-detail-icon icon-old">📦</div>
+            <p>Physical product shipping and staging</p>
+          </div>
+          <div class="showcase-detail">
+            <div class="showcase-detail-icon icon-old">🔄</div>
+            <p>Costly, time-consuming revision cycles</p>
+          </div>
+          <div class="showcase-detail">
+            <div class="showcase-detail-icon icon-old">❌</div>
+            <p>Still leaves retailers without branded versions</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="showcase-arrow">→</div>
+
+      <div class="showcase-panel">
+        <div class="showcase-panel-header">
+          <span class="showcase-panel-tag tag-ai">Content Engine™</span>
+          <span style="font-size:0.75rem; color:var(--terracotta);">The New Way</span>
+        </div>
+        <div class="showcase-panel-body">
+          <div class="showcase-visual visual-ai"></div>
+          <div class="showcase-detail">
+            <div class="showcase-detail-icon icon-new">⚡</div>
+            <p>5-day turnaround — SKU to market, fast</p>
+          </div>
+          <div class="showcase-detail">
+            <div class="showcase-detail-icon icon-new">✨</div>
+            <p>Starting at $250/SKU — 10x lower cost</p>
+          </div>
+          <div class="showcase-detail">
+            <div class="showcase-detail-icon icon-new">🎨</div>
+            <p>AI-generated from digital assets — no shipping needed</p>
+          </div>
+          <div class="showcase-detail">
+            <div class="showcase-detail-icon icon-new">👁</div>
+            <p>Human-curated by furniture production veterans</p>
+          </div>
+          <div class="showcase-detail">
+            <div class="showcase-detail-icon icon-new">🔄</div>
+            <p>Brand-versionable for every retailer</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="showcase-savings reveal">
+      <div class="savings-value">Up to 10x Lower Cost Than Traditional Production</div>
+      <div class="savings-label">With faster turnaround, complete asset libraries, and brand versioning built in</div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── SOCIAL PROOF ─── -->
+<section class="social-proof" id="proof">
+  <div class="section-header reveal">
+    <div class="section-label">Trusted Partners</div>
+    <h2 class="section-title">The brands behind the biggest names in furniture</h2>
+  </div>
+
+  <div class="logos-grid reveal">
+    <div class="logo-item">Brand</div>
+    <div class="logo-item">Brand</div>
+    <div class="logo-item">Brand</div>
+    <div class="logo-item">Brand</div>
+    <div class="logo-item">Brand</div>
+    <div class="logo-item">Brand</div>
+    <div class="logo-item">Brand</div>
+    <div class="logo-item">Brand</div>
+  </div>
+
+  <div class="testimonials reveal">
+    <div class="testimonial">
+      <p class="testimonial-quote">"VIA's Content Engine delivered a full asset library for our new collection in days — our retailers had what they needed before the product even hit showroom floors."</p>
+      <div class="testimonial-author">
+        <div class="author-avatar"></div>
+        <div>
+          <div class="author-name">Client Name</div>
+          <div class="author-role">VP of Marketing, Furniture Manufacturer</div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial">
+      <p class="testimonial-quote">"We went from basic product cutouts to full lifestyle libraries across our catalog. Our retailers are promoting us more — and the cost is a fraction of what we used to spend."</p>
+      <div class="testimonial-author">
+        <div class="author-avatar"></div>
+        <div>
+          <div class="author-name">Client Name</div>
+          <div class="author-role">Director of Brand, Home Furnishings</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── PRICING ─── -->
+<section class="pricing" id="pricing">
+  <div class="section-header reveal">
+    <div class="section-label">Per-SKU Pricing</div>
+    <h2 class="section-title">Simple pricing. No surprises.</h2>
+    <p class="section-subtitle">Choose the asset depth your retailers need. Every tier includes AI-enhanced creation, human curation, and retail-ready formatting in 16:9, 9:16, and 1:1.</p>
+  </div>
+
+  <div class="pricing-grid reveal">
+
+    <!-- TIER 1 -->
+    <div class="price-card">
+      <div class="price-card-label">Tier 1</div>
+      <div class="price-name">Essential</div>
+      <p class="price-desc">The basic value package — providing the minimum acceptable assets to retailers.</p>
+      <div class="price-value">$250</div>
+      <span class="price-per">per SKU</span>
+      <hr class="price-divider">
+      <div class="includes-label">Includes per SKU:</div>
+      <ul class="price-features">
+        <li class="price-feature">One (1) :10 product video in an applicable environment</li>
+        <li class="price-feature">One (1) static lifestyle image in an applicable environment</li>
+        <li class="price-feature">All formats: 16:9, 9:16, 1:1</li>
+        <li class="price-feature">Human-curated quality review</li>
+        <li class="price-feature">5-day turnaround</li>
+      </ul>
+      <a href="#contact" class="btn btn-outline">Get Started</a>
+    </div>
+
+    <!-- TIER 2 -->
+    <div class="price-card featured">
+      <div class="featured-badge">Most Popular</div>
+      <div class="price-card-label">Tier 2</div>
+      <div class="price-name">Retail Growth</div>
+      <p class="price-desc">The elevated package — providing retailers with an adequate collection to effectively promote products.</p>
+      <div class="price-value">$600</div>
+      <span class="price-per">per SKU</span>
+      <hr class="price-divider">
+      <div class="includes-label">Includes per SKU:</div>
+      <ul class="price-features">
+        <li class="price-feature">Three (3) :10 product videos in applicable environments</li>
+        <li class="price-feature">Three (3) static lifestyle images in applicable environments</li>
+        <li class="price-feature">All formats: 16:9, 9:16, 1:1</li>
+        <li class="price-feature">Human-curated quality review</li>
+        <li class="price-feature">5-day turnaround</li>
+      </ul>
+      <a href="#contact" class="btn">Book a Demo</a>
+    </div>
+
+    <!-- TIER 3 -->
+    <div class="price-card">
+      <div class="price-card-label">Tier 3</div>
+      <div class="price-name">Premium Promotion</div>
+      <p class="price-desc">The ultimate package — a robust selection of promotional-ready tools designed to drive product sales.</p>
+      <div class="price-value">$2,000</div>
+      <span class="price-per">per SKU</span>
+      <hr class="price-divider">
+      <div class="includes-label">Includes per SKU:</div>
+      <ul class="price-features">
+        <li class="price-feature">FAB product video (features, advantages, benefits)</li>
+        <li class="price-feature">Full angle library — up to six (6) shots</li>
+        <li class="price-feature">Both video and static lifestyle formats</li>
+        <li class="price-feature">All formats: 16:9, 9:16, 1:1</li>
+        <li class="price-feature">Human-curated quality review</li>
+        <li class="price-feature">5-day turnaround</li>
+      </ul>
+      <a href="#contact" class="btn btn-outline">Let's Talk</a>
+    </div>
+  </div>
+
+  <div class="pricing-note reveal">
+    <div class="pricing-note-title">Need high-volume coverage?</div>
+    <p>For larger manufacturers, we offer annual asset retainers with priority turnaround and volume pricing. Let's build a plan that covers your full catalog.</p>
+    <a href="#contact" class="btn btn-sm" style="margin-top:16px;">Talk to Us About a Retainer →</a>
+  </div>
+</section>
+
+<!-- ─── CTA / FORM ─── -->
+<section class="cta-section" id="contact">
+  <div class="cta-container reveal">
+    <div class="section-label">Get Started</div>
+    <h2 class="section-title">Ready to arm your retailers with better assets?</h2>
+    <p class="section-subtitle">Book a demo with our team. We'll show you what AI-powered, human-curated production looks like — built specifically for furniture manufacturers.</p>
+
+    <div class="cta-form">
+      <div class="form-row">
+        <input type="text" class="form-input" placeholder="First Name">
+        <input type="text" class="form-input" placeholder="Last Name">
+      </div>
+      <div class="form-group">
+        <input type="email" class="form-input" placeholder="Work Email">
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-input" placeholder="Company">
+      </div>
+      <div class="form-row">
+        <div>
+          <select class="form-select">
+            <option value="" disabled selected>Approx. SKU count?</option>
+            <option>Under 50 SKUs</option>
+            <option>50–200 SKUs</option>
+            <option>200–500 SKUs</option>
+            <option>500+ SKUs</option>
+          </select>
+        </div>
+        <div>
+          <select class="form-select">
+            <option value="" disabled selected>Interested tier?</option>
+            <option>Essential ($250/SKU)</option>
+            <option>Retail Growth ($600/SKU)</option>
+            <option>Premium ($2,000/SKU)</option>
+            <option>Annual Retainer</option>
+            <option>Not sure yet</option>
+          </select>
+        </div>
+      </div>
+      <button class="btn" onclick="alert('Thank you! Our team will be in touch shortly.')">Book My Demo →</button>
+      <p class="form-note">No commitment. No pressure. Just a conversation about what's possible.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FOOTER ─── -->
+<footer>
+  <div class="footer-logo">VIA<span>.AI</span></div>
+  <p class="footer-text">AI Automation. Human Curation. 20+ Years of Furniture Expertise.</p>
+  <div class="footer-links">
+    <a href="#">Privacy</a>
+    <a href="#">Terms</a>
+    <a href="#">Contact</a>
+  </div>
+</footer>
+
+<script>
+  // Nav scroll effect
+  window.addEventListener('scroll', () => {
+    document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 50);
+  });
+
+  // Scroll reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('visible');
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
